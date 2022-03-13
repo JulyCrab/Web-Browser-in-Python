@@ -55,7 +55,8 @@ class MainWindow(QMainWindow):
 
         self.add_new_tab(QUrl('http://www.google.com'), 'homepage')
         self.show()
-        self.setWindowTitle('Browser')
+        self.setWindowTitle('HugoChrome 11')
+        self.setWindowIcon(QIcon('Browser.png'))
 
     def add_new_tab(self, qurl=None, label="Blank"):
         if qurl is None:
@@ -92,7 +93,7 @@ class MainWindow(QMainWindow):
             return
 
         title = self.tabs.currentWidget().page().title()
-        self.setWindowTitle("% s - Browser" % title)
+        self.setWindowTitle("% s - HugoChrome 11" % title)
 
     def navigate_home(self):
         self.tabs.currentWidget().setUrl(QUrl("http://www.google.com"))
@@ -113,7 +114,6 @@ class MainWindow(QMainWindow):
 
 
 app = QApplication(sys.argv)
-app.setApplicationName("HugoChrome 11")
+app.setApplicationName("My Awesome Browser")
 window = MainWindow()
 app.exec_()
-
